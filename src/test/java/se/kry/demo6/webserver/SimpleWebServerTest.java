@@ -1,8 +1,8 @@
-package se.kry.demo.vthreads;
+package se.kry.demo6.webserver;
 
 import org.junit.jupiter.api.Test;
 
-public class VirtualThreadsTest {
+public class SimpleWebServerTest {
 
     @Test
     void foo() {
