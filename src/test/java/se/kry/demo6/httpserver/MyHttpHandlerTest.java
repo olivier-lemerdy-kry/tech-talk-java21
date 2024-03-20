@@ -1,7 +1,6 @@
 package se.kry.demo6.httpserver;
 
 import com.sun.net.httpserver.HttpServer;
-import com.sun.net.httpserver.SimpleFileServer;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -13,33 +12,26 @@ import java.net.URISyntaxException;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.nio.file.Path;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class SimpleHttpServerTest {
+public class MyHttpHandlerTest {
 
-    private static final int PORT = 12345;
+    private static final int PORT = 23456;
 
     private HttpServer server;
 
     @BeforeEach
-    void before() throws URISyntaxException {
-        var httpServerResourcesPath = Path.of(ClassLoader.getSystemResource("").toURI())
-                .getParent().getParent().getParent()
-                .resolve("resources/test/se/kry/demo6/httpserver");
-        server = SimpleFileServer.createFileServer(
-                new InetSocketAddress(PORT),
-                httpServerResourcesPath,
-                SimpleFileServer.OutputLevel.VERBOSE
-        );
+    void before() throws IOException {
+        server = HttpServer.create(new InetSocketAddress(PORT), 0);
+        server.createContext("/my-path", new MyHttpHandler());
         server.start();
     }
 
     @Test
-    void request_returns_index_content() throws URISyntaxException, IOException, InterruptedException {
+    void request_returns_handler_content() throws URISyntaxException, IOException, InterruptedException {
         // Given a request
-        var request = HttpRequest.newBuilder(new URI("http://localhost:" + PORT)).GET().build();
+        var request = HttpRequest.newBuilder(new URI("http://localhost:" + PORT + "/my-path")).GET().build();
         // And an HTTP client
         try (var client = HttpClient.newHttpClient()) {
             // When the client sends the request and receives a response
