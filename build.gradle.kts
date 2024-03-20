@@ -9,7 +9,9 @@ repositories {
 }
 
 dependencies {
+    testImplementation(platform(libs.assertj.bom))
     testImplementation(platform(libs.junit.bom))
+    testImplementation("org.assertj:assertj-core")
     testImplementation("org.junit.jupiter:junit-jupiter")
 }
 
