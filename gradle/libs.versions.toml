@@ -1,7 +1,14 @@
 [versions]
 assertj = "3.25.3"
+commons-lang3 = "3.14.0"
 junit = "5.10.2"
+lombok = "1.18.32"
+slf4j = "2.0.12"
 
 [libraries]
 assertj-bom = { module = "org.assertj:assertj-bom", version.ref = "assertj" }
 junit-bom = { module = "org.junit:junit-bom", version.ref = "junit" }
+slf4j-bom = { module = "org.slf4j:slf4j-bom", version.ref = "slf4j" }
+
+commons-lang3 = { module = "org.apache.commons:commons-lang3", version.ref = "commons-lang3" }
+lombok = { module = "org.projectlombok:lombok", version.ref = "lombok" }
