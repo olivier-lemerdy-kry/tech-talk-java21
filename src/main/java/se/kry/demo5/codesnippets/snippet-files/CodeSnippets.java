@@ -1,4 +1,4 @@
-public class ExternalCodeSnippets {
+public class CodeSnippets {
 
     public void java21ExternalSnippets(boolean success) {
         // @start region=java21ExternalSnippets

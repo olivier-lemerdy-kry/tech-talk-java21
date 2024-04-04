@@ -1,6 +1,6 @@
 package se.kry.demo5.codesnippets;
 
-// Execute javadoc src/main/java/se/kry/demo5/codesnippets/CodeSnippets.java -d javadoc --snippet-path=./src/main/snippet-files
+// Execute javadoc src/main/java/se/kry/demo5/codesnippets/CodeSnippets.java -d javadoc --snippet-path=./src/main/java/se/kry/demo5/codesnippets/snippet-files
 public class CodeSnippets {
 
     /**
