@@ -27,10 +27,6 @@ java {
     }
 }
 
-tasks.javadoc {
-
-}
-
 tasks.test {
     useJUnitPlatform()
 }

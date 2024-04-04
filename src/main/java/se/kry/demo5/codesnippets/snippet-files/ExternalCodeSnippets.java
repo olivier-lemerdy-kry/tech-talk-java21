@@ -1,4 +1,6 @@
-public class CodeSnippets {
+package se.kry.demo5.codesnippets;
+
+public class ExternalCodeSnippets {
 
     public void java21ExternalSnippets(boolean success) {
         // @start region=java21ExternalSnippets

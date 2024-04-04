@@ -46,7 +46,7 @@ public class CodeSnippets {
 
     /**
      * This is an example for external snippets.
-     * {@snippet file="CodeSnippets.java" region="java21ExternalSnippets" }"
+     * {@snippet class="ExternalCodeSnippets" region="java21ExternalSnippets" }"
      *
      * @param success a success flag
      */
@@ -60,7 +60,7 @@ public class CodeSnippets {
 
     /**
      * This is an example for highlighting.
-     * {@snippet file="CodeSnippets.java" region="java21ExternalSnippetsWithHighlight" }"
+     * {@snippet class="ExternalCodeSnippets" region="java21ExternalSnippetsWithHighlight" }"
      *
      * @param success a success flag
      */
